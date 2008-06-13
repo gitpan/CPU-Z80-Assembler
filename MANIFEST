@@ -1,0 +1,15 @@
+bin/z80masm
+lib/CPU/Z80/Assembler.pm
+Makefile.PL
+t/00-opcodes.t
+t/pod-coverage.t
+t/pod.t
+MANIFEST
+CHANGES
+README
+t/01-DEF-instrs.t
+t/02-labels.t
+t/03-macros.t
+GPL2.txt
+ARTISTIC.txt
+META.yml                                 Module meta-data (added by MakeMaker)
