@@ -1,1 +1,7 @@
+1.01  2008-06-14   Macro parameters no longer clash with labels
+                     whose names start the same as a parameter.
+                     eg, a param $r no longer clashes with label
+                     $rr
+                   Likewise labels
+
 1.0   2008-06-13   Original release

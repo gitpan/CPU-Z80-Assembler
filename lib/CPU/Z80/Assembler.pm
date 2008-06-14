@@ -1,13 +1,14 @@
-# $Id: Assembler.pm,v 1.31 2008/06/13 14:20:12 drhyde Exp $
+# $Id: Assembler.pm,v 1.34 2008/06/14 16:36:01 drhyde Exp $
 
 package CPU::Z80::Assembler;
 
 use strict;
 use warnings;
+use 5.008;
 
 use vars qw($VERSION @EXPORT $verbose);
 
-$VERSION = '1.0';
+$VERSION = '1.01';
 
 use base qw(Exporter);
 
@@ -280,7 +281,7 @@ sub _assemble_instr {
                 } = split(/,/, $params);
                 my @instrs = map {
                     my $instr = $_;
-                    $instr =~ s/$_/$param_substitutions{$_}/g
+                    $instr =~ s/$_\b/$param_substitutions{$_}/g
                         foreach(keys %param_substitutions);
                     $instr =~ s/\$([_a-z])/\$_macro_${address}_$1/g;
                     $instr;
@@ -1163,12 +1164,15 @@ sub _to_number {
     $number =~ s/\s*;.*//;
 
     $number =~ s/\$\$/$address/;
-    $number =~ s/\$$_/$labels{$_}/
+    $number =~ s/\$$_\b/$labels{$_}/
         foreach (keys %labels);
     if($pass == 2 && $number =~ /\$(\w+)/) {
         die("Unknown label \$$1 in $number\n")
     }
+    my $oldwarn = $SIG{__WARN__};
+    $SIG{__WARN__} = sub { print STDERR @_; exit(1) };
     $number = eval "0 + ($number)";
+    $SIG{__WARN__} = $oldwarn;
 
     # if($number =~ /^0[xb]/) {       # hex or binary
     #     $number = oct($number);
