@@ -15,4 +15,5 @@ ARTISTIC.txt
 t/include.z80
 t/04-hash-comments.t
 t/05-include.t
+t/06-binmode.t
 META.yml                                 Module meta-data (added by MakeMaker)
