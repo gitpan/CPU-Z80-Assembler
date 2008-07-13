@@ -1,13 +1,19 @@
-# http://module-build.sourceforge.net/META-spec.html
-#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
-name:         CPU-Z80-Assembler
-version:      1.03
-version_from: lib/CPU/Z80/Assembler.pm
-installdirs:  site
-requires:
-    File::Slurp:                   0
+--- #YAML:1.0
+name:                CPU-Z80-Assembler
+version:             2.00
+abstract:            ~
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.3201
+distribution_type:   module
+requires:     
+    Class::Struct:                 0
+    Data::Dump:                    1.08
+    File::Slurp:                   9999.13
     File::Spec:                    0
+    HOP::Stream:                   0.02
+    Regexp::Trie:                  0.02
     Test::More:                    0
-
-distribution_type: module
-generated_by: ExtUtils::MakeMaker version 6.30
+    Text::Tabs:                    2006.1117
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2

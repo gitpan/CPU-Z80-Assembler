@@ -1,5 +1,7 @@
 #!perl -w
 
+# $Id: z80masm,v 1.6 2008/07/12 19:55:55 T0071173 Exp $
+
 use strict;
 
 use CPU::Z80::Assembler;
@@ -7,14 +9,11 @@ $CPU::Z80::Assembler::verbose = 1;
 
 my $infile = shift();
 my $outfile = shift() || "$infile.o";
-$/ = undef;
-
-open(IN, $infile) || die("Can't open $infile\n");
+my $code = z80asm("#include '$infile'");
 open(OUT, ">$outfile") || die("Can't open $outfile\n");
 binmode(OUT);
-print OUT z80asm(<IN>);
+print OUT $code;
 close(OUT);
-close(IN);
 
 =head1 NAME
 

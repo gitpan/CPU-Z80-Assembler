@@ -1,5 +1,7 @@
 #!perl
 
+# $Id: 06-binmode.t,v 1.4 2008/07/12 19:55:55 T0071173 Exp $
+
 use strict;
 use warnings;
 
@@ -14,7 +16,9 @@ my $outfile = 't/04-binmode.o';
 	unlink $outfile;
 ok 	-f $infile, "$infile exists";
 ok	! -f $outfile, "$outfile does not exist";
-is	system($^X, File::Spec->catfile("blib", "script", "z80masm"), $infile, $outfile), 0, 
+is	system($^X, '-I'.File::Spec->catfile("blib", "lib"), 
+			         File::Spec->catfile("blib", "script", "z80masm"),
+			         $infile, $outfile), 0, 
 	"z80masm $infile $outfile";
 ok 	-f $outfile, "$outfile exists";
 is 	read_file($outfile, binmode => ':raw'), "\x3E\x0D\x06\x0A", "$outfile OK";
