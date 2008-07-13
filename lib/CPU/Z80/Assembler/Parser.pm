@@ -1,4 +1,4 @@
-# $Id: Parser.pm,v 1.4 2008/07/13 00:26:17 T0071173 Exp $
+# $Id: Parser.pm,v 1.5 2008/07/13 19:36:52 T0071173 Exp $
 
 # Join assembly tokens into instructions
 
@@ -11,7 +11,7 @@ use 5.008;
 use Data::Dump 'dump';
 use HOP::Stream ':all';
 
-our $VERSION = '2.00';
+our $VERSION = '2.01';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);

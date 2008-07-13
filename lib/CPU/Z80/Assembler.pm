@@ -1,4 +1,4 @@
-# $Id: Assembler.pm,v 1.40 2008/07/13 00:11:42 T0071173 Exp $
+# $Id: Assembler.pm,v 1.41 2008/07/13 19:36:52 T0071173 Exp $
 
 package CPU::Z80::Assembler;
 
@@ -12,9 +12,9 @@ use Data::Dump qw( dump );
 use HOP::Stream ':all';
 use Text::Tabs;
 
-use vars qw($VERSION @EXPORT $verbose);
+use vars qw(@EXPORT $verbose);
 
-$VERSION = '2.00';
+our $VERSION = '2.01';
 
 use base qw(Exporter);
 

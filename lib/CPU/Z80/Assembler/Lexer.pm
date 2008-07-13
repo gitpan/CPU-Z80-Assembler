@@ -1,4 +1,4 @@
-# $Id: Lexer.pm,v 1.4 2008/07/13 00:26:17 T0071173 Exp $
+# $Id: Lexer.pm,v 1.5 2008/07/13 19:36:36 T0071173 Exp $
 
 # Split assembly into tokens
 
@@ -12,7 +12,7 @@ use CPU::Z80::Assembler::Macro;
 use HOP::Stream ':all';
 use Regexp::Trie;
 
-our $VERSION = '2.00';
+our $VERSION = '2.01';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);
@@ -117,6 +117,7 @@ sub _line_stream {
 		}
 		my $this_line_nr = $line_nr;
 		$line_nr += $line_inc;
+		$line =~ s/\r//g;									# in case Windows file is processed in Unix
 		return node(	["LINE", $line, $this_line_nr, $file],
 			   node(	$line,
 						promise { $line_promise->() } ));

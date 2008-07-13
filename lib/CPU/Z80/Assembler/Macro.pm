@@ -1,4 +1,4 @@
-# $Id: Macro.pm,v 1.4 2008/07/13 00:26:17 T0071173 Exp $
+# $Id: Macro.pm,v 1.5 2008/07/13 19:36:52 T0071173 Exp $
 
 # Implement the z80masm macro processor
 
@@ -10,7 +10,7 @@ use 5.008;
 
 use HOP::Stream ':all';
 
-our $VERSION = '2.00';
+our $VERSION = '2.01';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);

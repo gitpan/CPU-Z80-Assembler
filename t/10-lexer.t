@@ -1,11 +1,11 @@
 #!perl
 
-# $Id: 10-lexer.t,v 1.2 2008/07/12 19:55:55 T0071173 Exp $
+# $Id: 10-lexer.t,v 1.4 2008/07/13 19:35:44 T0071173 Exp $
 
 use warnings;
 use strict;
 
-use Test::More tests => 416;
+use Test::More tests => 428;
 
 use_ok	'CPU::Z80::Assembler::Lexer';
 use_ok	'HOP::Stream', 'drop';
@@ -493,6 +493,24 @@ is_deeply	drop($s), ["LINE", "\n", 2, undef], "Line token";
 is_deeply	drop($s), ["\n", "\n"], "\\n token";
 is			drop($s), undef, "end of input";
 is			drop($s), undef, "end of input";
+
+#------------------------------------------------------------------------------
+# test handling of \r in Unix and Win systems
+#------------------------------------------------------------------------------
+isa_ok	$s = z80lexer(" 1 \r 2 \r\n 3 \n 4"),
+		'HOP::Stream';
+is_deeply	drop($s), ["LINE", " 1  2 \n", 1, undef], "Line token";
+is_deeply	drop($s), ["NUMBER",  1],  "Number token";
+is_deeply	drop($s), ["NUMBER",  2],  "Number token";
+is_deeply	drop($s), ["\n", "\n"], "\\n token";
+is_deeply	drop($s), ["LINE", " 3 \n", 2, undef], "Line token";
+is_deeply	drop($s), ["NUMBER",  3],  "Number token";
+is_deeply	drop($s), ["\n", "\n"], "\\n token";
+is_deeply	drop($s), ["LINE", " 4", 3, undef], "Line token";
+is_deeply	drop($s), ["NUMBER",  4],  "Number token";
+is			drop($s), undef, "end of input";
+is			drop($s), undef, "end of input";
+
 
 
 __DATA__
