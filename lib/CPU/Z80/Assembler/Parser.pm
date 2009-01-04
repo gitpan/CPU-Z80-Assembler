@@ -1,4 +1,4 @@
-# $Id: Parser.pm,v 1.9 2008/12/29 09:53:48 Paulo Custodio Exp $
+# $Id: Parser.pm,v 1.10 2009/01/04 05:43:38 Paulo Custodio Exp $
 
 # Join assembly tokens into instructions
 
@@ -13,7 +13,7 @@ use HOP::Stream ':all';
 
 use CPU::Z80::Assembler::ParserTable;
 
-our $VERSION = '2.02';
+our $VERSION = '2.03';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);

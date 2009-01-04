@@ -1,4 +1,4 @@
-# $Id: Lexer.pm,v 1.8 2008/12/29 09:52:14 Paulo Custodio Exp $
+# $Id: Lexer.pm,v 1.9 2009/01/04 05:43:38 Paulo Custodio Exp $
 
 # Split assembly into tokens
 
@@ -12,7 +12,7 @@ use CPU::Z80::Assembler::Macro;
 use HOP::Stream ':all';
 use Regexp::Trie;
 
-our $VERSION = '2.02';
+our $VERSION = '2.03';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);
