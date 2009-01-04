@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.9 2009/01/04 20:11:25 Paulo Custodio Exp $
+# $Id: Makefile.PL,v 1.10 2009/01/04 21:07:43 Paulo Custodio Exp $
 
 use ExtUtils::MakeMaker;
 use 5.008;
@@ -6,7 +6,6 @@ use 5.008;
 WriteMakefile(
     NAME         	=> 'CPU::Z80::Assembler',
     VERSION_FROM 	=> 'VERSION',
-    PM_FILTER		=> 'perl VERSION',
     depend 			=> { Makefile => '$(VERSION_FROM)' },
     PREREQ_PM 		=> {
         'Test::More' => 0,

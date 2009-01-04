@@ -1,8 +1,8 @@
 # Generated file, do not edit
-# $Id: ParserTable.pm,v 1.7 2009/01/04 20:15:20 Paulo Custodio Exp $
+# $Id: ParserTable.pm,v 1.8 2009/01/04 21:07:43 Paulo Custodio Exp $
 package CPU::Z80::Assembler::ParserTable;
 
-our $VERSION = '<VERSION>';
+our $VERSION = '2.05';
 
 use HOP::Stream qw(append list_to_stream);
 
