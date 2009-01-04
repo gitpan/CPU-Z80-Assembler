@@ -1,9 +1,10 @@
 --- #YAML:1.0
 name:                CPU-Z80-Assembler
-version:             2.01
+version:             2.02
 abstract:            ~
 license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.3201
+author:              ~
+generated_by:        ExtUtils::MakeMaker version 6.42_01
 distribution_type:   module
 requires:     
     Class::Struct:                 0
@@ -15,5 +16,5 @@ requires:
     Test::More:                    0
     Text::Tabs:                    2006.1117
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3

@@ -1,10 +1,11 @@
 #!perl
 
-# $Id: 07-list.t,v 1.2 2008/07/12 19:55:55 T0071173 Exp $
+# $Id: 07-list.t,v 1.3 2008/12/29 09:41:51 Paulo Custodio Exp $
 
 use strict;
 use warnings;
 
+use CPU::Z80::Assembler;
 use Test::More tests => 11;
 use File::Slurp;
 use File::Spec;
@@ -26,7 +27,8 @@ macro M1 {
 ";
 
 my $LST = 
-"0x0000:                                        | 
+"CPU::Z80::Assembler - z80masm v$CPU::Z80::Assembler::VERSION
+0x0000:                                        | 
 0x0000: ; comment                              | 
 0x0000: macro M1 {                             | 
 0x0000:         inc hl                         | 

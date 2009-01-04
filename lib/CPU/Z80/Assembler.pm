@@ -1,4 +1,4 @@
-# $Id: Assembler.pm,v 1.41 2008/07/13 19:36:52 T0071173 Exp $
+# $Id: Assembler.pm,v 1.44 2008/12/29 09:50:17 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler;
 
@@ -14,7 +14,7 @@ use Text::Tabs;
 
 use vars qw(@EXPORT $verbose);
 
-our $VERSION = '2.01';
+our $VERSION = '2.02';
 
 use base qw(Exporter);
 
@@ -23,18 +23,17 @@ use base qw(Exporter);
 my $pass = 0;
 my $address = 0x0000;
 my %labels = ();
-my %macros = ();
 my $code = '';
 my $bytes_this_instr = 0;
 my $startaddr = 0x0000;
 my $maxaddr = 0x0000;
+my @warnings;
 
 sub z80asm {
     my $source = z80parser(z80lexer(@_));		# input stream
 
 	# initialize
 	%labels = (org => 0);
-	%macros = ();
 	$code = chr(0) x 65536;
 
     for ($pass = 1; $pass <= 2; $pass++) {
@@ -61,15 +60,24 @@ sub z80asm {
 			# process all instructions in LINE
 			$bytes_this_instr = 0;
 			while (($token = head($input)) && $token->[0] ne "LINE") {
+				@warnings = ();
 				eval { $input = _assemble_instr($input) };
-				if ($@) {						# Semantic error
-					chomp($@);
-					die("\n",
-						(defined($line) ? 
-							"\t".$line->[1]."\n".
-							($line->[3] ? $line->[3] : "IN").
-							"(".$line->[2].") : " : ""),
-						"Error: $@\n");
+				if ($@ || @warnings) {		# Semantic error or warning
+					my $location = "\n".
+								(defined($line) ? 
+									"\t".$line->[1]."\n".
+									($line->[3] ? $line->[3] : "INPUT").
+								"(".$line->[2].") : " : "");
+					if ($@) {
+						chomp($@);	
+						die($location, "Error: $@\n");
+					}
+					else {
+						for (@warnings) {
+							chomp;
+							warn($location, "Warning: $_\n");
+						}
+					}
 				}
 			}
 			if ($verbose && $pass == 2) {
@@ -80,17 +88,22 @@ sub z80asm {
     return substr($code, $startaddr, $maxaddr - $startaddr);
 }
 
+my %assemble_table = (
+	OPCODE	=> \&_OPCODE,
+	LABEL	=> \&_LABEL,
+	ORG		=> \&_ORG,
+);
+
 sub _assemble_instr {
 	my($input) = @_;
 
     my $token = drop($input) or return undef;
     my($label, $value) = @$token;
-    
-    my $start_of_macro = 0;
 
-	if    ($label eq "OPCODE") {		_OPCODE($token) }
-	elsif ($label eq "LABEL") {			_LABEL($token) }
-	elsif ($label eq "org") {			_ORG($token) }
+	my $handler = $assemble_table{$label};
+	if (defined($handler) && ref($handler) eq "CODE") {
+		$handler->($token);
+	}
 	else {
 		die(sprintf("Invalid instruction near 0x%04X: %s\n", 
 					$address, $label));
@@ -115,15 +128,18 @@ sub _OPCODE {								# [OPCODE, byte, byte, ...]
 				my($type, $expr) = @$_;
 				my $value = eval_expr($expr, $address, \%labels);
 				if ($type eq "sb") {
-					die "Signed byte $value out of range\n" if ($value >= 0x80 || $value < -0x80);
+					push(@warnings, "Signed byte $value out of range\n")
+						if ($value >= 0x80 || $value < -0x80);
 					push(@computed, $value & 0xFF);
 				}
 				elsif ($type eq "ub") {
-					die "Unsigned byte $value out of range\n" if ($value >= 0x100 || $value < 0);
+					push(@warnings, "Unsigned byte $value out of range\n")
+						if ($value >= 0x100 || $value < -0x80);
 					push(@computed, $value & 0xFF);
 				}
 				elsif ($type eq "w") {
-					die "Word $value out of range\n" if ($value >= 0x10000 || $value < -0x8000);
+					push(@warnings, "Word $value out of range\n")
+						if ($value >= 0x10000 || $value < -0x8000);
 					push(@computed, $value & 0xFF, ($value >> 8) & 0xFF);
 				}
 				else {

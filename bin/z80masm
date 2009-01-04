@@ -1,19 +1,27 @@
 #!perl -w
 
-# $Id: z80masm,v 1.6 2008/07/12 19:55:55 T0071173 Exp $
+# $Id: z80masm,v 1.8 2008/12/29 09:37:44 Paulo Custodio Exp $
 
 use strict;
 
 use CPU::Z80::Assembler;
 $CPU::Z80::Assembler::verbose = 1;
 
-my $infile = shift();
-my $outfile = shift() || "$infile.o";
+my $version = $CPU::Z80::Assembler::VERSION;
+
+print "CPU::Z80::Assembler - z80masm v$version\n";
+
+my($infile, $outfile) = splice(@ARGV, 0, 2);
+defined($infile) && @ARGV == 0
+    or die "Usage: z80masm sourcefile [destfile]\n";
+$outfile ||= "$infile.o";
+
 my $code = z80asm("#include '$infile'");
 open(OUT, ">$outfile") || die("Can't open $outfile\n");
 binmode(OUT);
 print OUT $code;
 close(OUT);
+exit 0;
 
 =head1 NAME
 
@@ -39,28 +47,15 @@ L<CPU::Z80::Assembler>.
 
 =head1 BUGS and FEEDBACK
 
-The "unofficial" instructions aren't supported.
-
-I welcome feedback about my code, including constructive criticism.
-Bug reports should be made using L<http://rt.cpan.org/> or by email.
+See L<CPU::Z80::Assembler>.
 
 =head1 SEE ALSO
 
 L<CPU::Emulator::Z80>
+L<CPU::Z80::Assembler>
 
-=head1 AUTHOR, COPYRIGHT and LICENCE
+=head1 AUTHORS, COPYRIGHT and LICENCE
 
-Copyright 2008 David Cantrell E<lt>F<david@cantrell.org.uk>E<gt>
-
-This software is free-as-in-speech software, and may be used,
-distributed, and modified under the terms of either the GNU
-General Public Licence version 2 or the Artistic Licence.  It's
-up to you which one you use.  The full text of the licences can
-be found in the files GPL2.txt and ARTISTIC.txt, respectively.
-
-=head1 CONSPIRACY
-
-This software is also free-as-in-mason.
+See L<CPU::Z80::Assembler>.
 
 =cut
-

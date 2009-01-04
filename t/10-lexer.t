@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: 10-lexer.t,v 1.4 2008/07/13 19:35:44 T0071173 Exp $
+# $Id: 10-lexer.t,v 1.5 2008/12/29 09:41:51 Paulo Custodio Exp $
 
 use warnings;
 use strict;
