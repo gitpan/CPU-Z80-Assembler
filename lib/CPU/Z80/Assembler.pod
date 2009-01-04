@@ -1,4 +1,4 @@
-# $Id: Assembler.pod,v 1.2 2008/12/29 09:40:58 Paulo Custodio Exp $
+# $Id: Assembler.pod,v 1.3 2009/01/04 20:16:13 Paulo Custodio Exp $
 
 =head1 NAME
 
@@ -157,7 +157,7 @@ L<CPU::Emulator::Z80>
 
 =head1 AUTHORS, COPYRIGHT and LICENCE
 
-Copyright 2008 
+Copyright 2009 
 David Cantrell E<lt>F<david@cantrell.org.uk>E<gt>,
 Paulo Custodio E<lt>F<pscust@cpan.org>E<gt>
 

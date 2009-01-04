@@ -1,8 +1,8 @@
 --- #YAML:1.0
 name:                CPU-Z80-Assembler
-version:             2.03
+version:             2.04
 abstract:            ~
-license:             ~
+license:             perl
 author:              ~
 generated_by:        ExtUtils::MakeMaker version 6.42_01
 distribution_type:   module

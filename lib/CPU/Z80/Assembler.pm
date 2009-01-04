@@ -1,4 +1,4 @@
-# $Id: Assembler.pm,v 1.45 2009/01/04 05:43:38 Paulo Custodio Exp $
+# $Id: Assembler.pm,v 1.46 2009/01/04 20:14:28 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler;
 
@@ -14,7 +14,7 @@ use Text::Tabs;
 
 use vars qw(@EXPORT $verbose);
 
-our $VERSION = '2.03';
+our $VERSION = '<VERSION>';
 
 use base qw(Exporter);
 
