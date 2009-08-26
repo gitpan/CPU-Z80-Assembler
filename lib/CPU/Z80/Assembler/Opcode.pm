@@ -1,4 +1,4 @@
-# $Id: Opcode.pm,v 1.1.2.4 2009/08/23 22:38:04 Paulo Custodio Exp $
+# $Id: Opcode.pm,v 1.1.2.5 2009/08/26 00:38:57 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler::Opcode;
 
@@ -14,9 +14,9 @@ CPU::Z80::Assembler::Opcode - Represents one assembly expression to be computed 
 
 use strict;
 use warnings;
-use 5.008;
+use 5.006;
 
-our $VERSION = '2.05_04';
+our $VERSION = '2.05_05';
 
 use Class::Struct (
 		child	=> '@',		# list of children of this node

@@ -1,4 +1,4 @@
-# $Id: Segment.pm,v 1.1.2.4 2009/08/23 23:10:55 Paulo Custodio Exp $
+# $Id: Segment.pm,v 1.1.2.5 2009/08/26 00:38:02 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler::Segment;
 
@@ -14,9 +14,9 @@ CPU::Z80::Assembler::Segment - Represents one segment of assembly opcodes
 
 use strict;
 use warnings;
-use 5.008;
+use 5.006;
 
-our $VERSION = '2.05_04';
+our $VERSION = '2.05_05';
 
 use Class::Struct (
 		child	=> '@',		# list of children of this node

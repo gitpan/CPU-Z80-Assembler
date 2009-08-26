@@ -1,7 +1,7 @@
-# $Id: Makefile.PL,v 1.10.2.3 2009/08/23 22:20:52 Paulo Custodio Exp $
+# $Id: Makefile.PL,v 1.10.2.4 2009/08/26 00:24:59 Paulo Custodio Exp $
 
 use ExtUtils::MakeMaker;
-use 5.008;
+use 5.006;
 
 WriteMakefile(
     NAME         	=> 'CPU::Z80::Assembler',

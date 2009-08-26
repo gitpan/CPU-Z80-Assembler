@@ -1,4 +1,4 @@
-# $Id: Lexer.pm,v 1.11.2.4 2009/08/23 22:31:06 Paulo Custodio Exp $
+# $Id: Lexer.pm,v 1.11.2.5 2009/08/26 00:38:56 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler::Lexer;
 
@@ -14,7 +14,7 @@ CPU::Z80::Assembler::Lexer - Scanner for the Z80 assembler
 
 use strict;
 use warnings;
-use 5.008;
+use 5.006;
 
 use CPU::Z80::Assembler::Line;
 use CPU::Z80::Assembler::Token;
@@ -23,7 +23,7 @@ use CPU::Z80::Assembler::Preprocessor;
 use CPU::Z80::Assembler::Stream;
 use Regexp::Trie;
 
-our $VERSION = '2.05_04';
+our $VERSION = '2.05_05';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);

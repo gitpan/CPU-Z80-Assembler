@@ -1,4 +1,4 @@
-# $Id: Macro.pm,v 1.11.2.5 2009/08/23 22:32:48 Paulo Custodio Exp $
+# $Id: Macro.pm,v 1.11.2.6 2009/08/26 00:36:40 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler::Macro;
 
@@ -14,13 +14,13 @@ CPU::Z80::Assembler::Macro - Macro pre-processor for the Z80 assembler
 
 use strict;
 use warnings;
-use 5.008;
+use 5.006;
 
 use CPU::Z80::Assembler::Token;
 use CPU::Z80::Assembler::Parser;
 use CPU::Z80::Assembler::Stream;
 
-our $VERSION = '2.05_04';
+our $VERSION = '2.05_05';
 
 #------------------------------------------------------------------------------
 # Class::Struct cannot be used with Exporter
@@ -288,11 +288,10 @@ sub parse_macro_arguments {
 		}
 	}
 	
-	# expect end of statement
+	# expect end of statement, keep input at end of statement marker
 	$token = $input->head;
 	(!defined($token) || $token->type =~ /^[:\n]$/)
 		or CPU::Z80::Assembler::Token->error_at($token, "too many macro arguments");
-	$input->get if defined($token);
 	
 	return \%args;
 }
