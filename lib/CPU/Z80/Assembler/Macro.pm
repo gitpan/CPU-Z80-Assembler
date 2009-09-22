@@ -1,4 +1,4 @@
-# $Id: Macro.pm,v 1.11.2.6 2009/08/26 00:36:40 Paulo Custodio Exp $
+# $Id: Macro.pm,v 1.11.2.7 2009/09/22 00:20:56 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler::Macro;
 
@@ -14,13 +14,12 @@ CPU::Z80::Assembler::Macro - Macro pre-processor for the Z80 assembler
 
 use strict;
 use warnings;
-use 5.006;
 
 use CPU::Z80::Assembler::Token;
 use CPU::Z80::Assembler::Parser;
 use CPU::Z80::Assembler::Stream;
 
-our $VERSION = '2.05_05';
+our $VERSION = '2.05_06';
 
 #------------------------------------------------------------------------------
 # Class::Struct cannot be used with Exporter

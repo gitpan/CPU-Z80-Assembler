@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: Macro.t,v 1.1.2.3 2009/08/26 00:41:20 Paulo Custodio Exp $
+# $Id: Macro.t,v 1.1.2.4 2009/09/22 00:11:07 Paulo Custodio Exp $
 
 use warnings;
 use strict;
@@ -33,7 +33,7 @@ is $bin1, $bin2, "macro expansion OK";
 
 
 ok $bin1 = z80asm('
-macro $m { nop } : $m : $m : $m
+macro m1 { nop } : m1 : m1 : m1
 ');
 ok $bin2 = z80asm('
 nop : nop : nop

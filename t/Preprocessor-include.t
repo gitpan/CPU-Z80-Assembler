@@ -1,18 +1,18 @@
 #!perl
 
-# $Id: Preprocessor-include.t,v 1.1.2.2 2009/08/23 23:12:45 Paulo Custodio Exp $
+# $Id: Preprocessor-include.t,v 1.1.2.3 2009/09/22 00:13:34 Paulo Custodio Exp $
 
 use warnings;
 use strict;
 
-use Test::More tests => 78;
+use Test::More tests => 81;
 use Data::Dump 'dump';
 
 use_ok 'CPU::Z80::Assembler::Line';
 use_ok 'CPU::Z80::Assembler::Preprocessor';
 use_ok 'CPU::Z80::Assembler::Stream';
 
-require 't/test_utils.pl';
+require_ok 't/test_utils.pl';
 our $stream;
 
 

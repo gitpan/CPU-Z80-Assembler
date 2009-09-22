@@ -1,15 +1,16 @@
 #!perl -w
 
-# $Id: z80masm,v 1.8.2.1 2009/08/11 14:18:42 Paulo Custodio Exp $
+# $Id: z80masm,v 1.8.2.2 2009/09/22 00:26:57 Paulo Custodio Exp $
 
 use strict;
 
 use CPU::Z80::Assembler;
-$CPU::Z80::Assembler::verbose = 1;
+$CPU::Z80::Assembler::verbose   = 1;
+$CPU::Z80::Assembler::fill_byte = 0xFF;
 
 my $version = $CPU::Z80::Assembler::VERSION;
 
-print "CPU::Z80::Assembler - z80masm v$version\n\n";
+print STDERR "CPU::Z80::Assembler - z80masm v$version\n\n";
 
 my($infile, $outfile) = splice(@ARGV, 0, 2);
 defined($infile) && @ARGV == 0

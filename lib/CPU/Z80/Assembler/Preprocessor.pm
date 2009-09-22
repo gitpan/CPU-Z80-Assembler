@@ -1,4 +1,4 @@
-# $Id: Preprocessor.pm,v 1.1.2.5 2009/08/26 00:28:42 Paulo Custodio Exp $
+# $Id: Preprocessor.pm,v 1.1.2.6 2009/09/22 00:20:56 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler::Preprocessor;
 
@@ -14,12 +14,11 @@ CPU::Z80::Assembler::Preprocessor - Preprocessor for the Z80 assembler
 
 use strict;
 use warnings;
-use 5.006;
 
 use CPU::Z80::Assembler::Line;
 use CPU::Z80::Assembler::Stream;
 
-our $VERSION = '2.05_05';
+our $VERSION = '2.05_06';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);

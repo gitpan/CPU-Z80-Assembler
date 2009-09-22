@@ -1,11 +1,11 @@
 #!perl
 
-# $Id: Expr-bytes.t,v 1.1.2.2 2009/08/23 23:12:44 Paulo Custodio Exp $
+# $Id: Expr-bytes.t,v 1.1.2.3 2009/09/22 00:03:07 Paulo Custodio Exp $
 
 use strict;
 use warnings;
 
-use Test::More tests => 49;
+use Test::More tests => 51;
 use_ok 'CPU::Z80::Assembler::Expr';
 use_ok 'CPU::Z80::Assembler::Line';
 use_ok 'CPU::Z80::Assembler::Lexer';

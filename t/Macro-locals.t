@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: Macro-locals.t,v 1.1.2.2 2009/08/23 23:12:44 Paulo Custodio Exp $
+# $Id: Macro-locals.t,v 1.1.2.3 2009/09/22 00:11:07 Paulo Custodio Exp $
 
 use warnings;
 use strict;
@@ -12,8 +12,8 @@ use Test::More tests => 3;
 ok my $bin1 = z80asm('
         MACRO HLAGH {
           LD A,A
-        $label
-          DEFW $label
+        label
+          DEFW label
         }
         HLAGH
         HLAGH
@@ -22,9 +22,9 @@ ok my $bin1 = z80asm('
 
 ok my $bin2 = z80asm('
           LD A,A
-          DEFW $$
+          DEFW $
           LD A,A
-          DEFW $$
+          DEFW $
     '),
     "expanded macro";
 

@@ -1,16 +1,16 @@
 #!perl
 
-# $Id: Lexer-crlf.t,v 1.1.2.2 2009/08/23 23:12:44 Paulo Custodio Exp $
+# $Id: Lexer-crlf.t,v 1.1.2.3 2009/09/22 00:06:13 Paulo Custodio Exp $
 
 use warnings;
 use strict;
 
-use Test::More tests => 63;
+use Test::More tests => 66;
 
 use_ok	'CPU::Z80::Assembler::Lexer';
 use_ok	'CPU::Z80::Assembler::Stream';
 
-require 't/test_utils.pl';
+require_ok 't/test_utils.pl';
 our $stream;
 
 
