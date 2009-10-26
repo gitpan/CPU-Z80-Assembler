@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: binmode.t,v 1.1.2.2 2009/08/23 23:12:45 Paulo Custodio Exp $
+# $Id: binmode.t,v 1.4 2009/10/26 20:39:06 Paulo Custodio Exp $
 
 use strict;
 use warnings;

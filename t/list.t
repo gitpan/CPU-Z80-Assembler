@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: list.t,v 1.1.2.3 2009/08/26 00:42:01 Paulo Custodio Exp $
+# $Id: list.t,v 1.4 2009/10/26 20:41:17 Paulo Custodio Exp $
 
 use strict;
 use warnings;

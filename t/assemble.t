@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: assemble.t,v 1.1.2.3 2009/08/23 23:12:45 Paulo Custodio Exp $
+# $Id: assemble.t,v 1.4 2009/10/26 20:38:53 Paulo Custodio Exp $
 
 use strict;
 use warnings;

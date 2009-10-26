@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: Line-clone.t,v 1.1.2.2 2009/08/23 23:12:44 Paulo Custodio Exp $
+# $Id: Line-clone.t,v 1.4 2009/10/26 20:41:16 Paulo Custodio Exp $
 
 use strict;
 use warnings;

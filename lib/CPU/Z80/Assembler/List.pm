@@ -1,4 +1,4 @@
-# $Id: List.pm,v 1.1.2.4 2009/09/22 00:19:13 Paulo Custodio Exp $
+# $Id: List.pm,v 1.2 2009/10/26 20:37:07 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler::List;
 
@@ -19,7 +19,7 @@ use Text::Tabs;
 use CPU::Z80::Assembler::Stream;
 use CPU::Z80::Assembler::Preprocessor;
 
-our $VERSION = '2.05_06';
+our $VERSION = '2.06';
 
 use Class::Struct (
 		output			=> '$',		# output file handle for the list

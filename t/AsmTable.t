@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: AsmTable.t,v 1.1.2.1 2009/09/22 00:00:26 Paulo Custodio Exp $
+# $Id: AsmTable.t,v 1.4 2009/10/26 20:38:39 Paulo Custodio Exp $
 
 use warnings;
 use strict;

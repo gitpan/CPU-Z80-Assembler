@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: DEF-instrs.t,v 1.1.2.4 2009/09/22 00:01:12 Paulo Custodio Exp $
+# $Id: DEF-instrs.t,v 1.4 2009/10/26 20:39:18 Paulo Custodio Exp $
 
 use warnings;
 use strict;

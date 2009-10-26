@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: 04-hash-comments.t,v 1.3 2008/12/29 09:41:51 Paulo Custodio Exp $
+# $Id: hash-comments_.t,v 1.1 2009/10/26 20:44:12 Paulo Custodio Exp $
 
 use warnings;
 use strict;

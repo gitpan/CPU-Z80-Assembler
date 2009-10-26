@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: 02-labels.t,v 1.6.2.1 2009/09/22 00:06:38 Paulo Custodio Exp $
+# $Id: labels_.t,v 1.1 2009/10/26 20:44:12 Paulo Custodio Exp $
 
 use warnings;
 use strict;
