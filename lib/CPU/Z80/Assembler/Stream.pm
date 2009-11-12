@@ -1,4 +1,4 @@
-# $Id: Stream.pm,v 1.2 2009/10/26 20:37:08 Paulo Custodio Exp $
+# $Id: Stream.pm,v 1.3 2009/11/12 20:38:12 Paulo Custodio Exp $
 
 package CPU::Z80::Assembler::Stream;
 
@@ -15,7 +15,7 @@ CPU::Z80::Assembler::Stream - Object to encapsulate an iterator to be able to un
 use strict;
 use warnings;
 
-our $VERSION = '2.06';
+our $VERSION = '2.07';
 
 #------------------------------------------------------------------------------
 
