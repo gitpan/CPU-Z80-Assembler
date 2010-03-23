@@ -1,4 +1,4 @@
-# $Id: Token.pm,v 1.5 2010/03/22 17:04:35 Paulo Exp $
+# $Id: Token.pm,v 1.6 2010/03/23 00:48:56 Paulo Exp $
 
 package CPU::Z80::Assembler::Token;
 
@@ -15,7 +15,7 @@ CPU::Z80::Assembler::Token - One token retrieved from the input
 use strict;
 use warnings;
 
-our $VERSION = '2.08_01';
+our $VERSION = '2.09';
 
 use Data::Dump 'dump';
 use CPU::Z80::Assembler::Line;

@@ -1,4 +1,4 @@
-# $Id: Line.pm,v 1.5 2010/03/22 17:04:31 Paulo Exp $
+# $Id: Line.pm,v 1.6 2010/03/23 00:48:54 Paulo Exp $
 
 package CPU::Z80::Assembler::Line;
 
@@ -15,7 +15,7 @@ CPU::Z80::Assembler::Line - One line of text retrieved from the input
 use strict;
 use warnings;
 
-our $VERSION = '2.08_01';
+our $VERSION = '2.09';
 
 use Data::Dump 'dump';
 

@@ -1,4 +1,4 @@
-# $Id: Lexer.pm,v 1.15 2010/03/22 17:04:31 Paulo Exp $
+# $Id: Lexer.pm,v 1.16 2010/03/23 00:48:54 Paulo Exp $
 
 package CPU::Z80::Assembler::Lexer;
 
@@ -22,7 +22,7 @@ use CPU::Z80::Assembler::Preprocessor;
 use CPU::Z80::Assembler::Stream;
 use Regexp::Trie;
 
-our $VERSION = '2.08_01';
+our $VERSION = '2.09';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);

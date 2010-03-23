@@ -1,4 +1,4 @@
-# $Id: Expr.pm,v 1.5 2010/03/22 17:04:31 Paulo Exp $
+# $Id: Expr.pm,v 1.6 2010/03/23 00:48:54 Paulo Exp $
 
 package CPU::Z80::Assembler::Expr;
 
@@ -15,7 +15,7 @@ CPU::Z80::Assembler::Expr - Represents one assembly expression to be computed at
 use strict;
 use warnings;
 
-our $VERSION = '2.08_01';
+our $VERSION = '2.09';
 
 use CPU::Z80::Assembler::Line;
 use CPU::Z80::Assembler::Lexer;
