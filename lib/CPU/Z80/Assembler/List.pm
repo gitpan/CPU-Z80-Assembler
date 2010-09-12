@@ -1,4 +1,4 @@
-# $Id: List.pm,v 1.6 2010/03/23 00:48:54 Paulo Exp $
+# $Id: List.pm,v 1.7 2010/09/12 20:41:20 Paulo Exp $
 
 package CPU::Z80::Assembler::List;
 
@@ -16,10 +16,10 @@ use strict;
 use warnings;
 
 use Text::Tabs;
-use CPU::Z80::Assembler::Stream;
+use Asm::Preproc::Stream;
 use CPU::Z80::Assembler::Preprocessor;
 
-our $VERSION = '2.09';
+our $VERSION = '2.10';
 
 use Class::Struct (
 		output			=> '$',		# output file handle for the list
@@ -60,7 +60,7 @@ Nothing.
 
   my $lst = CPU::Z80::Assembler::List->new(input => $asm_input, output => \*STDOUT);
 
-Creates a new object, see L<Class::Struct>.
+Creates a new object, see L<Class::Struct|Class::Struct>.
 
 =head2 input
 
@@ -82,7 +82,7 @@ If output is undefined, no output is generated.
 
   $self->add($line, $address, $bytes);
 
-Adds a new opcode to the output listing. Receives the opcode L<CPU::Z80::Assembler::Line>, 
+Adds a new opcode to the output listing. Receives the opcode L<Asm::Preproc::Line|Asm::Preproc::Line>, 
 address and bytes. Generates the output lines including this new opcode.
 
 The output is held in an internal buffer until an opcode for the next line is passed to a

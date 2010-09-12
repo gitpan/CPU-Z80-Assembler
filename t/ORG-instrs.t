@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: ORG-instrs.t,v 1.4 2009/10/26 20:41:16 Paulo Custodio Exp $
+# $Id: ORG-instrs.t,v 1.5 2010/09/12 21:03:44 Paulo Exp $
 
 use warnings;
 use strict;
@@ -67,5 +67,5 @@ DEFB 0x30, 0x31, 0x32, 0x33, 0x34
 ORG 0x11
 DEFB 0x35, 0x36, 0x37, 0x38, 0x39
 ') };
-is $@, "\tDEFB 0x35, 0x36, 0x37, 0x38, 0x39\ninput(5) : error: segments overlap, previous ends at 0x0015, next starts at 0x0011\n", "segment overlap";
+is $@, "-(5) : error: segments overlap, previous ends at 0x0015, next starts at 0x0011\n", "segment overlap";
 

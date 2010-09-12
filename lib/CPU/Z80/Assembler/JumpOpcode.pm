@@ -1,4 +1,4 @@
-# $Id: JumpOpcode.pm,v 1.6 2010/03/23 00:48:54 Paulo Exp $
+# $Id: JumpOpcode.pm,v 1.7 2010/09/12 20:39:58 Paulo Exp $
 
 package CPU::Z80::Assembler::JumpOpcode;
 
@@ -16,9 +16,9 @@ computed at link time
 use strict;
 use warnings;
 
-our $VERSION = '2.09';
+our $VERSION = '2.10';
 
-use CPU::Z80::Assembler::Line;
+use Asm::Preproc::Line;
 
 sub new { 
 	my($class, %args) = @_;
@@ -96,11 +96,11 @@ Address where this opcode is loaded, computed at link time.
 
 =head2 short_jump
 
-Returns the L<CPU::Z80::Assembler::Opcode> object representing the short jump.
+Returns the L<CPU::Z80::Assembler::Opcode|CPU::Z80::Assembler::Opcode> object representing the short jump.
 
 =head2 long_jump
 
-Returns the L<CPU::Z80::Assembler::Opcode> object representing the long jump.
+Returns the L<CPU::Z80::Assembler::Opcode|CPU::Z80::Assembler::Opcode> object representing the long jump.
 
 =head2 line
 
@@ -168,17 +168,17 @@ sub size {
 
 =head1 BUGS and FEEDBACK
 
-See L<CPU::Z80::Assembler>.
+See L<CPU::Z80::Assembler|CPU::Z80::Assembler>.
 
 =head1 SEE ALSO
 
-L<CPU::Z80::Assembler>
-L<CPU::Z80::Assembler::Line>
-L<CPU::Z80::Assembler::ode>
+L<CPU::Z80::Assembler|CPU::Z80::Assembler>
+L<CPU::Z80::Assembler::Opcode|CPU::Z80::Assembler::Opcode>
+L<Asm::Preproc::Line|Asm::Preproc::Line>
 
 =head1 AUTHORS, COPYRIGHT and LICENCE
 
-See L<CPU::Z80::Assembler>.
+See L<CPU::Z80::Assembler|CPU::Z80::Assembler>.
 
 =cut
 

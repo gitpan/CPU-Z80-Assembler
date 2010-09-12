@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: Program-org.t,v 1.4 2009/10/26 20:41:17 Paulo Custodio Exp $
+# $Id: Program-org.t,v 1.5 2010/09/12 21:07:24 Paulo Exp $
 
 use strict;
 use warnings;
@@ -131,7 +131,7 @@ is $program->child->[1], $program->segment("CODE1"), "name";
 is $program->child->[1]->address, 11, "name";
 
 eval {$program->bytes};
-is $@, "\tline 3\nf.asm(3) : error: segments overlap, previous ends at 0x000D, next starts at 0x000B\n", "overlap";
+is $@, "f.asm(3) : error: segments overlap, previous ends at 0x000D, next starts at 0x000B\n", "overlap";
 
 
 # two segments, no ORG, no ORG
