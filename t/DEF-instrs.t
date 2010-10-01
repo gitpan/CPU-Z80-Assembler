@@ -1,40 +1,35 @@
 #!perl
 
-# $Id: DEF-instrs.t,v 1.5 2010/09/12 20:54:48 Paulo Exp $
+# $Id: DEF-instrs.t,v 1.6 2010/10/01 11:02:25 Paulo Exp $
 
 use warnings;
 use strict;
 use CPU::Z80::Assembler;
 # $CPU::Z80::Assembler::verbose =1;
 
-use Test::More tests => 66;
+use Test::More;
 
 my $warn; 
 $SIG{__WARN__} = sub {$warn = shift};
-END { is $warn, undef, "no warnings"; }
 
 is 	z80asm('DEFB 0x45'),       chr(0x45), 'hex  DEFB';
 is 	z80asm('DEFB 69'),         chr(0x45), 'dec  DEFB';
 is 	z80asm('DEFB 0b01000101'), chr(0x45), 'bin  DEFB';
-is 	z80asm('DEFB 0105'),       chr(0x45), 'oct  DEFB';
 is 	z80asm('DEFB 68+1'),       chr(0x45), 'calc DEFB';
 
 is 	z80asm('DB 0x45'),       chr(0x45), 'hex  DEFB';
 is 	z80asm('DB 69'),         chr(0x45), 'dec  DEFB';
 is 	z80asm('DB 0b01000101'), chr(0x45), 'bin  DEFB';
-is 	z80asm('DB 0105'),       chr(0x45), 'oct  DEFB';
 is 	z80asm('DB 68+1'),       chr(0x45), 'calc DEFB';
 
 is 	z80asm('DEFW 0x4645'),             	chr(0x45).chr(0x46), 'hex  DEFW';
 is 	z80asm('DEFW 17989'),              	chr(0x45).chr(0x46), 'dec  DEFW';
 is 	z80asm('DEFW 0b0100011001000101'), 	chr(0x45).chr(0x46), 'bin  DEFB';
-is 	z80asm('DEFW 043105'),             	chr(0x45).chr(0x46), 'oct  DEFB';
 is 	z80asm('DEFW 17988+1'),            	chr(0x45).chr(0x46), 'calc DEFW';
 
 is 	z80asm('DW 0x4645'),             	chr(0x45).chr(0x46), 'hex  DEFW';
 is 	z80asm('DW 17989'),              	chr(0x45).chr(0x46), 'dec  DEFW';
 is 	z80asm('DW 0b0100011001000101'), 	chr(0x45).chr(0x46), 'bin  DEFB';
-is 	z80asm('DW 043105'),             	chr(0x45).chr(0x46), 'oct  DEFB';
 is 	z80asm('DW 17988+1'),            	chr(0x45).chr(0x46), 'calc DEFW';
 
 is 	z80asm("DEFT ''\nDEFT 'text'"), 	"text", "DEFT ''";
@@ -116,3 +111,8 @@ is 	$warn, "-(1) : warning: Expression hello: extra bytes ignored\n", "warning";
 $warn = undef;
 
 is	$warn, undef, "no warnings";
+
+
+
+is $warn, undef, "no warnings";
+done_testing();

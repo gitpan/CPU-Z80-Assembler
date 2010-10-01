@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               CPU-Z80-Assembler
-version:            2.10
+version:            2.11
 abstract:           ~
 author:  []
 license:            perl
@@ -10,7 +10,7 @@ configure_requires:
 build_requires:
     ExtUtils::MakeMaker:  0
 requires:
-    Asm::Preproc:         0.02
+    Asm::Preproc:         0.04
     Class::Struct:        0
     Data::Dump:           1.08
     File::Slurp:          9999.13

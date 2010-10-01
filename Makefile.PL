@@ -1,4 +1,4 @@
-# $Id: Makefile.PL,v 1.13 2010/09/12 21:23:13 Paulo Exp $
+# $Id: Makefile.PL,v 1.14 2010/10/01 11:02:24 Paulo Exp $
 use strict;
 use warnings;
 use ExtUtils::MakeMaker;
@@ -9,7 +9,7 @@ WriteMakefile(
     VERSION_FROM 	=> 'VERSION',
     depend 			=> { Makefile => '$(VERSION_FROM)' },
     PREREQ_PM 		=> {
-		'Asm::Preproc'				=> 0.02,
+		'Asm::Preproc'				=> 0.04,
         'Class::Struct'				=> 0,
         'Data::Dump' 				=> 1.08,
         'File::Slurp' 				=> 9999.13,

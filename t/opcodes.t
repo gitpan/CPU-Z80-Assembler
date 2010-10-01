@@ -1,6 +1,6 @@
 #!perl
 
-# $Id: opcodes.t,v 1.4 2009/10/26 20:41:17 Paulo Custodio Exp $
+# $Id: opcodes.t,v 1.5 2010/10/01 11:02:25 Paulo Exp $
 
 use strict;
 use warnings;
@@ -17,7 +17,7 @@ while (<$fh>) {
     my $expectedbinary = join(
         '',
         map {
-            chr(eval "0x$_")
+            chr(hex($_))
         } split(" ", $expectedbytes)
     );
     my $binary = eval { z80asm("\nORG 0x$address\n$code\n") };
