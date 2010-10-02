@@ -1,4 +1,4 @@
-# $Id: Assembler.pm,v 1.54 2010/10/01 11:02:24 Paulo Exp $
+# $Id: Assembler.pm,v 1.55 2010/10/02 19:41:59 Paulo Exp $
 
 package CPU::Z80::Assembler;
 
@@ -13,7 +13,7 @@ use Text::Tabs; 						# imports expand(), unexpand()
 
 use vars qw(@EXPORT $verbose);
 
-our $VERSION = '2.11';
+our $VERSION = '2.12';
 our $verbose;
 our $fill_byte = 0xFF;
 

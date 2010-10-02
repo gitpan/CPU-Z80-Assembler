@@ -1,4 +1,4 @@
-# $Id: Preprocessor.pm,v 1.8 2010/10/01 11:02:25 Paulo Exp $
+# $Id: Preprocessor.pm,v 1.9 2010/10/02 19:42:00 Paulo Exp $
 
 package CPU::Z80::Assembler::Preprocessor;
 
@@ -19,7 +19,7 @@ use Asm::Preproc;
 use Asm::Preproc::Line;
 use Asm::Preproc::Stream;
 
-our $VERSION = '2.11';
+our $VERSION = '2.12';
 
 use vars qw(@EXPORT);
 use base qw(Exporter);
