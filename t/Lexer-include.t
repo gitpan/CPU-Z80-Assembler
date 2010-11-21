@@ -1,13 +1,13 @@
 #!perl
 
-# $Id: Lexer-include.t,v 1.5 2010/09/12 20:59:10 Paulo Exp $
+# $Id: Lexer-include.t,v 1.6 2010/11/21 16:48:35 Paulo Exp $
 
 use warnings;
 use strict;
 
 use Test::More;
 
-use_ok	'CPU::Z80::Assembler::Lexer';
+use_ok	'CPU::Z80::Assembler';
 use_ok	'Asm::Preproc::Stream';
 
 require_ok 't/test_utils.pl';
@@ -115,4 +115,4 @@ test_token(	"\n", 		"\n");
 test_eof();
 
 
-done_testing;
+done_testing();

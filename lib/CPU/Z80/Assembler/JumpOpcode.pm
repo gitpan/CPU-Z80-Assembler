@@ -1,4 +1,4 @@
-# $Id: JumpOpcode.pm,v 1.9 2010/10/02 19:41:59 Paulo Exp $
+# $Id: JumpOpcode.pm,v 1.10 2010/11/21 16:37:05 Paulo Exp $
 
 package CPU::Z80::Assembler::JumpOpcode;
 
@@ -16,7 +16,7 @@ computed at link time
 use strict;
 use warnings;
 
-our $VERSION = '2.12';
+our $VERSION = '2.13';
 
 use Asm::Preproc::Line;
 

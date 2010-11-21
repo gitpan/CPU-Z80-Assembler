@@ -1,4 +1,4 @@
-# $Id: Segment.pm,v 1.9 2010/10/02 19:42:00 Paulo Exp $
+# $Id: Segment.pm,v 1.10 2010/11/21 16:40:27 Paulo Exp $
 
 package CPU::Z80::Assembler::Segment;
 
@@ -15,7 +15,7 @@ CPU::Z80::Assembler::Segment - Represents one segment of assembly opcodes
 use strict;
 use warnings;
 
-our $VERSION = '2.12';
+our $VERSION = '2.13';
 
 use Asm::Preproc::Line;
 

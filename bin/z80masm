@@ -1,6 +1,6 @@
 #!perl -w
 
-# $Id: z80masm,v 1.9 2009/10/26 20:36:52 Paulo Custodio Exp $
+# $Id: z80masm,v 1.10 2010/11/21 16:29:18 Paulo Exp $
 
 use strict;
 
@@ -17,7 +17,7 @@ defined($infile) && @ARGV == 0
     or die "Usage: z80masm sourcefile [destfile]\n";
 $outfile ||= "$infile.o";
 
-my $code = z80asm("#include '$infile'");
+my $code = z80asm_file($infile);
 open(OUT, ">$outfile") || die("Can't open $outfile\n");
 binmode(OUT);
 print OUT $code;

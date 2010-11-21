@@ -1,4 +1,4 @@
-# $Id: Opcode.pm,v 1.9 2010/10/02 19:42:00 Paulo Exp $
+# $Id: Opcode.pm,v 1.10 2010/11/21 16:37:05 Paulo Exp $
 
 package CPU::Z80::Assembler::Opcode;
 
@@ -15,7 +15,7 @@ CPU::Z80::Assembler::Opcode - Represents one assembly expression to be computed 
 use strict;
 use warnings;
 
-our $VERSION = '2.12';
+our $VERSION = '2.13';
 
 use Asm::Preproc::Line;
 

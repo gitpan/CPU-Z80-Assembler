@@ -1,18 +1,18 @@
 #!perl
 
-# $Id: Program-locate.t,v 1.5 2010/09/12 21:06:53 Paulo Exp $
+# $Id: Program-locate.t,v 1.6 2010/11/21 16:46:52 Paulo Exp $
 
 use strict;
 use warnings;
 
 use Test::More tests => 44;
 
+use_ok 'CPU::Z80::Assembler';
 use_ok 'CPU::Z80::Assembler::Program';
 use_ok 'CPU::Z80::Assembler::Segment';
 use_ok 'CPU::Z80::Assembler::Expr';
 use_ok 'CPU::Z80::Assembler::Opcode';
 use_ok 'Asm::Preproc::Line';
-use_ok 'CPU::Z80::Assembler::Lexer';
 
 require_ok 't/test_utils.pl';
 

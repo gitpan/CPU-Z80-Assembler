@@ -1,14 +1,14 @@
 #!perl
 
-# $Id: Expr-parse.t,v 1.5 2010/09/12 20:56:50 Paulo Exp $
+# $Id: Expr-parse.t,v 1.6 2010/11/21 16:48:35 Paulo Exp $
 
 use strict;
 use warnings;
 
 use Test::More tests => 205;
+use_ok 'CPU::Z80::Assembler';
 use_ok 'CPU::Z80::Assembler::Expr';
 use_ok 'Asm::Preproc::Line';
-use_ok 'CPU::Z80::Assembler::Lexer';
 use_ok 'Asm::Preproc::Stream';
 require_ok 't/test_utils.pl';
 

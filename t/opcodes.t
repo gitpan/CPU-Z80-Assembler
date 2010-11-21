@@ -1,12 +1,12 @@
 #!perl
 
-# $Id: opcodes.t,v 1.5 2010/10/01 11:02:25 Paulo Exp $
+# $Id: opcodes.t,v 1.6 2010/11/21 16:44:29 Paulo Exp $
 
 use strict;
 use warnings;
 use CPU::Z80::Assembler;
 
-use Test::More tests => 9165;
+use Test::More;
 
 #$CPU::Z80::Assembler::verbose = 1;
 
@@ -30,3 +30,5 @@ while (<$fh>) {
 sub hexdump {
 	return join(' ', map { sprintf("0x%02X", ord($_)) } split(//, shift));
 }
+
+done_testing;

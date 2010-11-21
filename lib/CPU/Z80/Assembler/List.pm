@@ -1,4 +1,4 @@
-# $Id: List.pm,v 1.9 2010/10/02 19:41:59 Paulo Exp $
+# $Id: List.pm,v 1.10 2010/11/21 16:35:22 Paulo Exp $
 
 package CPU::Z80::Assembler::List;
 
@@ -17,9 +17,9 @@ use warnings;
 
 use Text::Tabs;
 use Asm::Preproc::Stream;
-use CPU::Z80::Assembler::Preprocessor;
+use CPU::Z80::Assembler;
 
-our $VERSION = '2.12';
+our $VERSION = '2.13';
 
 use Class::Struct (
 		output			=> '$',		# output file handle for the list
@@ -138,7 +138,8 @@ sub flush { my($self) = @_;
 				$rewind_count++;						# end of input, rewind
 				die "Cannot find $line in list" if $rewind_count > 1;	
 														# assert input is OK
-				$self->_line_stream(z80preprocessor(@{$self->input}));
+				$self->_line_stream(CPU::Z80::Assembler::z80preprocessor(
+														@{$self->input}));
 			}
 			
 			last if $line == $self->_current_line;		# found current line
