@@ -1,4 +1,4 @@
-# $Id: List.pm,v 1.10 2010/11/21 16:35:22 Paulo Exp $
+# $Id: List.pm,v 1.11 2013/07/26 02:16:14 Paulo Exp $
 
 package CPU::Z80::Assembler::List;
 
@@ -16,10 +16,10 @@ use strict;
 use warnings;
 
 use Text::Tabs;
-use Asm::Preproc::Stream;
+use Iterator::Simple::Lookahead;
 use CPU::Z80::Assembler;
 
-our $VERSION = '2.13';
+our $VERSION = '2.14';
 
 use Class::Struct (
 		output			=> '$',		# output file handle for the list
@@ -134,7 +134,7 @@ sub flush { my($self) = @_;
 		my $line;
 		for (;;) {
 			while (! defined($self->_line_stream) ||
-				   ! defined($line = $self->_line_stream->get)) {
+				   ! defined($line = $self->_line_stream->next)) {
 				$rewind_count++;						# end of input, rewind
 				die "Cannot find $line in list" if $rewind_count > 1;	
 														# assert input is OK

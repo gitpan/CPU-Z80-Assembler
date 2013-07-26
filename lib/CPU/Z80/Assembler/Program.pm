@@ -1,4 +1,4 @@
-# $Id: Program.pm,v 1.10 2010/11/21 16:40:27 Paulo Exp $
+# $Id: Program.pm,v 1.11 2013/07/26 02:16:15 Paulo Exp $
 
 package CPU::Z80::Assembler::Program;
 
@@ -15,7 +15,7 @@ CPU::Z80::Assembler::Program - Represents one assembly program
 use strict;
 use warnings;
 
-our $VERSION = '2.13';
+our $VERSION = '2.14';
 
 use CPU::Z80::Assembler::Parser;
 use CPU::Z80::Assembler::Segment;
